@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Gestión de Tickets de Soporte" skipped="0" tests="3" time="7.34" timestamp="2026-03-13 03:23:08"><testcase name="Reporte de incidente"/><testcase name="Visualizar tickets en dashboard"/><testcase name="Filtrar tickets por estado"/></testsuite>

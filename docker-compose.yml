@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  automation-tests:
+    build: .
+    container_name: serenity-tests
+    volumes:
+      - ./target/site/serenity:/app/target/site/serenity
+    environment:
+      - WEBDRIVER_REMOTE_URL=http://selenium-hub:4444/wd/hub
+      - WEBDRIVER_DRIVER=chrome
+    depends_on:
+      - selenium-hub
+  selenium-hub:
+    image: selenium/hub:4.18.1
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_MAX_SESSION=16
+      - GRID_BROWSER_TIMEOUT=300
+  chrome:
+    image: selenium/node-chrome:4.18.1
+    container_name: chrome-node
+    shm_size: '2gb'
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443

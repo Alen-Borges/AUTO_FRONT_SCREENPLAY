@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Gestión de Tickets de Soporte</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Gestión de Tickets de Soporte</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Gestión de Tickets de Soporte</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">17.318s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Filtrar tickets por estado</td>
+<td class="success">3.324s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Reporte de incidente</td>
+<td class="success">11.861s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Visualizar tickets en dashboard</td>
+<td class="success">2.133s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@reporte
+Scenario: Reporte de incidente                                              ?[90m# src/test/resources/features/gestion_tickets.feature:4?[0m
+  ?[32mGiven ?[0m?[32mque el usuario está en la pantalla de reporte de incidentes?[0m         ?[90m# com.automatizacion.steps.FormularioSteps.abrirFormulario()?[0m
+  ?[32mWhen ?[0m?[32menvía un reporte con los siguientes datos:?[0m                           ?[90m# com.automatizacion.steps.FormularioSteps.enviarReporte(io.cucumber.datatable.DataTable)?[0m
+    | email             | linea     | tipo | descripcion                      |
+    | usuario@email.com | 123456789 | Otro | El servicio de internet es lento |
+  ?[32mThen ?[0m?[32mel sistema debería confirmar que el reporte fue enviado exitosamente?[0m ?[90m# com.automatizacion.steps.FormularioSteps.verificarMensajeExito()?[0m
+
+@dashboard
+Scenario: Visualizar tickets en dashboard              ?[90m# src/test/resources/features/gestion_tickets.feature:12?[0m
+  ?[32mGiven ?[0m?[32mque el usuario está en el dashboard de tickets?[0m ?[90m# com.automatizacion.steps.TicketsSteps.abrirDashboard()?[0m
+  ?[32mThen ?[0m?[32mla tabla debería mostrar al menos un ticket?[0m     ?[90m# com.automatizacion.steps.TicketsSteps.verificarTablaConDatos()?[0m
+
+@filtro
+Scenario: Filtrar tickets por estado                         ?[90m# src/test/resources/features/gestion_tickets.feature:17?[0m
+  ?[32mGiven ?[0m?[32mque el usuario está en el dashboard de tickets?[0m       ?[90m# com.automatizacion.steps.TicketsSteps.abrirDashboard()?[0m
+  ?[32mWhen ?[0m?[32mfiltra los tickets por estado ?[0m?[32m?[1m&quot;Recibida&quot;?[0m              ?[90m# com.automatizacion.steps.TicketsSteps.filtrarPorEstado(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32msolo deberían mostrarse tickets con estado ?[0m?[32m?[1m&quot;Recibida&quot;?[0m ?[90m# com.automatizacion.steps.TicketsSteps.verificarFiltroEstado(java.lang.String)?[0m
+</pre>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Reporte de incidente(gestión-de-tickets-de-soporte;reporte-de-incidente)
+--------------------------------------------------------------------------------
+[Test worker] WARN net.serenitybdd.model.buildinfo.PropertyBasedDriverCapabilityRecord - Failed to store browser configuration for {goog:chromeOptions={args=[test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, --headless, remote-allow-origins=*], binary=/usr/bin/chromium, extensions=[]}, acceptInsecureCerts=true, browserName=chrome}
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, --headless, remote-allow-origins=*], binary: /usr/bin/chromium, extensions: []}}
+Mar 13, 2026 3:23:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 145
+Mar 13, 2026 3:23:12 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 145.0.7632.116. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.12.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Reporte de incidente
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Visualizar tickets en dashboard(gestión-de-tickets-de-soporte;visualizar-tickets-en-dashboard)
+--------------------------------------------------------------------------------
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, --headless, remote-allow-origins=*], binary: /usr/bin/chromium, extensions: []}}
+Mar 13, 2026 3:23:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 145
+Mar 13, 2026 3:23:21 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 145.0.7632.116. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.12.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Visualizar tickets en dashboard
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Filtrar tickets por estado(gestión-de-tickets-de-soporte;filtrar-tickets-por-estado)
+--------------------------------------------------------------------------------
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-dev-shm-usage, disable-extensions, headless, --headless, remote-allow-origins=*], binary: /usr/bin/chromium, extensions: []}}
+Mar 13, 2026 3:23:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 145
+Mar 13, 2026 3:23:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 145.0.7632.116. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.12.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Filtrar tickets por estado
+----------------------------------------------------------------------
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at Mar 13, 2026, 3:23:26 PM</p>
+</div>
+</div>
+</body>
+</html>
