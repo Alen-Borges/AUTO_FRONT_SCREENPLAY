@@ -1,0 +1,139 @@
+Initialized native services in: /home/ale/.gradle/native
+Initialized jansi services in: /home/ale/.gradle/native
+The client will now receive all logging from the daemon (pid: 13321). The daemon log file: /home/ale/.gradle/daemon/9.0.0/daemon-13321.out.log
+Starting 28th build in daemon [uptime: 1 hrs 14 mins 7.582 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 29% of 384 MiB]
+Using 8 worker leases.
+Now considering [/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY, /home/ale/Desktop/semana5/repos/AUTO_FRONT_POM_FACTORY] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/settings.gradle'.
+Projects loaded. Root project using build file '/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/build.gradle'.
+Included projects: [root project 'pom']
+
+> Configure project :
+Evaluating root project 'pom' using build file '/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/build.gradle'.
+Resolved plugin [id: 'java']
+Resolved plugin [id: 'net.serenity-bdd.serenity-gradle-plugin', version: '4.0.12']
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':aggregate']
+Tasks that were excluded: []
+Resolve mutations for :compileJava (Thread[#2378,Execution worker,5,main]) started.
+:compileJava (Thread[#2382,Execution worker Thread 5,5,main]) started.
+
+> Task :compileJava UP-TO-DATE
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Skipping task ':compileJava' as it is up-to-date.
+Resolve mutations for :processResources (Thread[#2382,Execution worker Thread 5,5,main]) started.
+:processResources (Thread[#2382,Execution worker Thread 5,5,main]) started.
+
+> Task :processResources NO-SOURCE
+Skipping task ':processResources' as it has no source files and no previous output files.
+Resolve mutations for :classes (Thread[#2383,Execution worker Thread 6,5,main]) started.
+:classes (Thread[#2383,Execution worker Thread 6,5,main]) started.
+
+> Task :classes UP-TO-DATE
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[#2383,Execution worker Thread 6,5,main]) started.
+:compileTestJava (Thread[#2383,Execution worker Thread 6,5,main]) started.
+
+> Task :compileTestJava FAILED
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Task ':compileTestJava' is not up-to-date because:
+  Task has failed previously.
+The input changes require a full rebuild for incremental task ':compileTestJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain '/usr/lib/jvm/java-21-openjdk'.
+Compiling with JDK Java compiler API.
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:14: error: cannot find symbol
+import net.thucydides.core.annotations.Managed;
+                                      ^
+  symbol:   class Managed
+  location: package net.thucydides.core.annotations
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:13: error: cannot find symbol
+import net.thucydides.core.annotations.Managed;
+                                      ^
+  symbol:   class Managed
+  location: package net.thucydides.core.annotations
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:22: error: cannot find symbol
+    @Managed
+     ^
+  symbol:   class Managed
+  location: class FormularioSteps
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:19: error: cannot find symbol
+    @Managed
+     ^
+  symbol:   class Managed
+  location: class TicketsSteps
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:53: error: cannot find symbol
+            OnStage.theActorInTheSpotlight().asksAbout(MensajeExitoVisible.enPantalla())
+                                            ^
+  symbol:   method asksAbout(MensajeExitoVisible)
+  location: class Actor
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:36: error: cannot find symbol
+            OnStage.theActorInTheSpotlight().asksAbout(TablaContieneTickets.conDatos())
+                                            ^
+  symbol:   method asksAbout(TablaContieneTickets)
+  location: class Actor
+/home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:50: error: cannot find symbol
+            OnStage.theActorInTheSpotlight().asksAbout(TodosLosTicketsTienenEstado.igualA(estado))
+                                            ^
+  symbol:   method asksAbout(TodosLosTicketsTienenEstado)
+  location: class Actor
+7 errors
+
+[Incubating] Problems report is available at: file:///home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:14: error: cannot find symbol
+  import net.thucydides.core.annotations.Managed;
+                                        ^
+    symbol:   class Managed
+    location: package net.thucydides.core.annotations
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:13: error: cannot find symbol
+  import net.thucydides.core.annotations.Managed;
+                                        ^
+    symbol:   class Managed
+    location: package net.thucydides.core.annotations
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:22: error: cannot find symbol
+      @Managed
+       ^
+    symbol:   class Managed
+    location: class FormularioSteps
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:19: error: cannot find symbol
+      @Managed
+       ^
+    symbol:   class Managed
+    location: class TicketsSteps
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/FormularioSteps.java:53: error: cannot find symbol
+              OnStage.theActorInTheSpotlight().asksAbout(MensajeExitoVisible.enPantalla())
+                                              ^
+    symbol:   method asksAbout(MensajeExitoVisible)
+    location: class Actor
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:36: error: cannot find symbol
+              OnStage.theActorInTheSpotlight().asksAbout(TablaContieneTickets.conDatos())
+                                              ^
+    symbol:   method asksAbout(TablaContieneTickets)
+    location: class Actor
+  /home/ale/Desktop/semana5/repos/AUTO_FRONT_SCREENPLAY/src/test/java/com/automatizacion/steps/TicketsSteps.java:50: error: cannot find symbol
+              OnStage.theActorInTheSpotlight().asksAbout(TodosLosTicketsTienenEstado.igualA(estado))
+                                              ^
+    symbol:   method asksAbout(TodosLosTicketsTienenEstado)
+    location: class Actor
+  7 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (Powered by Develocity).
+
+BUILD FAILED in 4s
+2 actionable tasks: 1 executed, 1 up-to-date

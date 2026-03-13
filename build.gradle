@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.12'
+}
+
+group = 'com.automatizacion'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'net.serenity-bdd:serenity-core:4.0.12'
+    testImplementation 'net.serenity-bdd:serenity-cucumber:4.0.12'
+    testImplementation 'net.serenity-bdd:serenity-screenplay:4.0.12'
+    testImplementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.0.12'
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.assertj:assertj-core:3.25.3'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.9'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+    systemProperty 'cucumber.filter.tags', System.getProperty('cucumber.filter.tags', '')
+    systemProperty 'serenity.output.directory', "${project.projectDir}/target/site/serenity"
+    finalizedBy aggregate
+}
+
+serenity {
+    reports = ["html"]
+    outputDirectory = file("${project.projectDir}/target/site/serenity")
+}
